@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соня и Олег</title>
+    <link rel="icon" type="image/svg+xml" sizes="any" href="images/favicon-any.svg">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon.svg">
+    <link rel="apple-touch-icon" type="image/png" href="images/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================
+     VIDEO BACKGROUND (behind everything)
+     ============================================ -->
+<div id="video-container">
+    <video id="bgVideo" preload="auto" playsinline loop muted>
+        <source src="https://kinescope.io/5s3ZHKTouXKKcgPxtWbFRD/1080p" type="video/mp4">
+    </video>
+</div>
+
+<!-- ============================================
+     INVITATION OVERLAY (white screen on load)
+     ============================================ -->
+<div id="invitationOverlay">
+    <div class="overlay-content">
+        <p class="overlay-text">свадебное</p>
+        <p class="overlay-subtitle">Нажмите на кнопку, чтобы открыть его.</p>
+        <button id="openBtn" class="gold-btn">ОТКРЫТЬ</button>
+    </div>
+</div>
+
+<!-- ============================================
+     FIXED HEADER — Music Controls
+     ============================================ -->
+<header id="fixedHeader">
+    <a href="#" id="musicPlay" class="music-icon">
+        <img src="images/play-btn.svg" alt="Play" width="56" height="56">
+    </a>
+    <a href="#" id="musicStop" class="music-icon" style="display:none;">
+        <img src="images/stop-btn.svg" alt="Stop" width="56" height="56">
+    </a>
+    <span id="musicLabel" class="music-label">вЫключить<br>музыку</span>
+</header>
+
+<!-- Audio -->
+<audio id="audioPlayer">
+    <source src="https://7d5518ca-df16-4696-9079-a9df2c18b494.selstorage.ru/ed%20shiran%20purfect%20full" type="audio/mpeg">
+</audio>
+
+<!-- ============================================
+     MAIN CONTENT
+     ============================================ -->
+<main id="mainContent">
+
+    <!-- === NAMES === -->
+    <section class="sec sec-names">
+        <h2 class="names-title">
+            <span class="gold-text">ОЛЕГ</span>
+            <span class="gold-text amp">&amp;</span>
+            <span class="gold-text">СОФЬЯ</span>
+        </h2>
+        <div class="ornament-wrap">
+            <img src="images/ornament.svg" alt="" class="ornament-img">
+        </div>
+        <p class="greeting">Дорогие наши друзья и родные</p>
+        <p class="intro-text">В нашей жизни произойдет очень важно событие</p>
+    </section>
+
+    <!-- === DATE & PHOTOS === -->
+    <section class="sec sec-date">
+        <p class="gold-text date-big">10/10/2026</p>
+        <div class="photos-row">
+            <img src="images/photo-wide.svg" alt="" class="photo-ph">
+            <img src="images/photo.svg" alt="" class="photo-ph photo-ph--sm">
+            <img src="images/frame.svg" alt="" class="photo-frame-icon">
+        </div>
+    </section>
+
+    <div class="spacer-140"></div>
+
+    <!-- === PROGRAM === -->
+    <section class="sec sec-program">
+        <h2 class="sec-title gold-text">Программа дня</h2>
+        <p class="program-intro">Мы хотим, чтобы вы разделили с нами радость и были на торжестве в самый важный и трогательный день для нас!</p>
+
+        <div class="timeline">
+            <div class="tl-item">
+                <span class="tl-time gold-text">11:45</span>
+                <span class="tl-event">Регистрация брака в Москве</span>
+            </div>
+            <div class="tl-line"></div>
+            <div class="tl-item">
+                <span class="tl-time gold-text">17:00</span>
+                <span class="tl-event">Сбор гостей</span>
+            </div>
+            <div class="tl-line"></div>
+            <div class="tl-item">
+                <span class="tl-time gold-text">17:30</span>
+                <span class="tl-event">Начало банкета</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer-120"></div>
+
+    <!-- === DECORATIVE DIVIDER === -->
+    <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+    </div>
+
+    <div class="spacer-50"></div>
+
+    <!-- === VENUE === -->
+    <section class="sec sec-venue">
+        <p class="venue-label">РЕСТОРАН</p>
+        <h2 class="venue-name gold-text">ТЕРЕМ</h2>
+        <p class="venue-addr">г. Александров, КУБА</p>
+        <a href="#" class="outline-btn">Как добраться</a>
+    </section>
+
+    <div class="spacer-160"></div>
+
+    <!-- === DRESS CODE === -->
+    <section class="sec sec-dresscode">
+        <h2 class="sec-title gold-text">DRESS CODE</h2>
+        <p class="dc-text">Мы очень старались сделать праздник красивым и будем рады, если в своих нарядах Вы поддержите вечерний стиль и цветовую гамму.</p>
+        <div class="dc-icons">
+            <img src="images/gentlemen.svg" alt="" class="dc-icon">
+            <img src="images/ladies.svg" alt="" class="dc-icon">
+        </div>
+    </section>
+
+    <div class="spacer-160"></div>
+
+    <!-- === WISHES === -->
+    <section class="sec sec-wishes">
+        <h2 class="sec-title gold-text">ПОЖЕЛАНИЯ</h2>
+        <p class="wishes-text">Свои тёплые слова и пожелания приносите в сердцах,</p>
+    </section>
+
+    <div class="spacer-100"></div>
+
+    <section class="sec sec-wishes2">
+        <p class="wishes-text">Будем благодарны, если вы воздержитесь от криков &laquo;Горько&raquo; на празднике, ведь поцелуй - это знак выражения чувств, он не может быть по заказу.</p>
+    </section>
+
+    <div class="spacer-160"></div>
+
+    <!-- === COUNTDOWN === -->
+    <section class="sec sec-countdown">
+        <h2 class="sec-title gold-text">Осталось до праздника</h2>
+        <div class="countdown">
+            <div class="cd-block">
+                <span class="cd-num" id="days">00</span>
+                <span class="cd-label">дней</span>
+            </div>
+            <span class="cd-colon">:</span>
+            <div class="cd-block">
+                <span class="cd-num" id="hours">00</span>
+                <span class="cd-label">часов</span>
+            </div>
+            <span class="cd-colon">:</span>
+            <div class="cd-block">
+                <span class="cd-num" id="minutes">00</span>
+                <span class="cd-label">минут</span>
+            </div>
+            <span class="cd-colon">:</span>
+            <div class="cd-block">
+                <span class="cd-num" id="seconds">00</span>
+                <span class="cd-label">секунд</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer-160"></div>
+
+    <!-- === RSVP FORM === -->
+    <section class="sec sec-rsvp">
+        <h2 class="sec-title gold-text">АНКЕТА ГОСТЯ</h2>
+        <p class="rsvp-sub">Заполните, пожалуйста, форму, чтобы подтвердить своё присутствие.</p>
+        <p class="rsvp-note">*Поскольку в анкете есть вопросы касательно меню и напитков, просим гостей, которые придут в паре, заполнять форму по отдельности.</p>
+
+        <form class="rsvp-form" id="rsvpForm">
+            <div class="fg">
+                <input type="text" name="name" placeholder="Имя" required class="fi">
+            </div>
+            <div class="fg">
+                <input type="tel" name="phone" placeholder="Телефон" required class="fi" id="phoneInput">
+            </div>
+            <div class="fg">
+                <label class="radio-label">
+                    <input type="radio" name="contact" value="Telegram" checked>
+                    <span class="radio-mark"></span>
+                    <span>Напишите мне в Telegram</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="contact" value="Max">
+                    <span class="radio-mark"></span>
+                    <span>Напишите мне в Max</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="contact" value="Звонок">
+                    <span class="radio-mark"></span>
+                    <span>Перезвоните мне</span>
+                </label>
+            </div>
+            <div class="fg">
+                <label class="check-label">
+                    <input type="checkbox" name="privacy" required checked>
+                    <span class="check-mark"></span>
+                    <span>Я согласен на обработку персональных данных</span>
+                </label>
+            </div>
+            <button type="submit" class="gold-btn submit-btn">ОТПРАВИТЬ</button>
+        </form>
+    </section>
+
+    <div class="spacer-80"></div>
+
+    <!-- === DEADLINE === -->
+    <section class="sec sec-deadline">
+        <p class="deadline-text">Ждём Вашего ответа до 20.11.2026</p>
+    </section>
+
+    <div class="spacer-150"></div>
+
+    <!-- === HOST === -->
+    <section class="sec sec-host">
+        <h2 class="host-name gold-text">Сергей</h2>
+        <p class="host-text">Если у вас есть какое-то оригинальное поздравление - можете обратиться к нашему ведущему</p>
+        <a href="#" class="gold-btn host-btn">Связаться</a>
+    </section>
+
+    <div class="spacer-150"></div>
+
+    <!-- === CLOSING === -->
+    <section class="sec sec-closing">
+        <p class="closing-text">С ЛЮБОВЬЮ,</p>
+    </section>
+
+    <div class="spacer-150"></div>
+    <div class="spacer-150"></div>
+
+</main>
+
+<!-- ============================================
+     FIXED FOOTER
+     ============================================ -->
+<footer id="fixedFooter">
+    <a href="#" class="ft-btn ft-btn--outline">НАЗАД</a>
+    <a href="#sec-rsvp" class="ft-btn ft-btn--gold">ОБСУДИТЬ ДЕТАЛИ</a>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

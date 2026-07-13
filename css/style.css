@@ -1,0 +1,738 @@
+/* ========================================
+   RESET
+   ======================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: Arial, sans-serif;
+    color: #3f3f3f;
+    line-height: 1.55;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; }
+
+/* ========================================
+   GOLD GRADIENT TEXT
+   ======================================== */
+.gold-text {
+    background: linear-gradient(0.208turn, rgba(230,194,124,1) 29%, rgba(167,119,19,1) 69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   VIDEO BACKGROUND
+   ======================================== */
+#video-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -100;
+    overflow: hidden;
+    background: #000;
+}
+
+#video-container video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* ========================================
+   INVITATION OVERLAY
+   ======================================== */
+#invitationOverlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease;
+}
+
+#invitationOverlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1c1c1c;
+    margin-bottom: 25px;
+}
+
+.overlay-subtitle {
+    font-size: 22px;
+    color: #1c1c1c;
+    margin-bottom: 40px;
+}
+
+/* ========================================
+   GOLD BUTTON
+   ======================================== */
+.gold-btn {
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff;
+    background: linear-gradient(0.344turn, rgba(230,194,124,1) 10%, rgba(167,119,19,1) 69%);
+    border: 1px solid #a77713;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.gold-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   OUTLINE BUTTON
+   ======================================== */
+.outline-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    color: #3f3f3f;
+    border: 2px solid #3f3f3f;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.outline-btn:hover {
+    background: #3f3f3f;
+    color: #fff;
+}
+
+/* ========================================
+   FIXED HEADER — Music
+   ======================================== */
+#fixedHeader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 130px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    pointer-events: none;
+}
+
+.music-icon {
+    pointer-events: all;
+    display: inline-block;
+    width: 56px; height: 56px;
+    transition: opacity 0.3s;
+}
+
+.music-icon:hover { opacity: 0.7; }
+.music-icon img { width: 100%; height: auto; }
+
+.music-label {
+    font-size: 10px;
+    color: #000;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 1.25;
+    pointer-events: all;
+    transition: opacity 0.5s;
+}
+
+.music-label.hidden { opacity: 0; }
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+#mainContent {
+    display: none;
+    padding-top: 130px;
+}
+
+#mainContent.visible {
+    display: block;
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+.sec {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.sec-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Spacers */
+.spacer-50  { height: 50px; }
+.spacer-80  { height: 80px; }
+.spacer-100 { height: 100px; }
+.spacer-120 { height: 120px; }
+.spacer-140 { height: 140px; }
+.spacer-150 { height: 150px; }
+.spacer-160 { height: 160px; }
+
+/* ========================================
+   NAMES SECTION
+   ======================================== */
+.sec-names {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.names-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 62px;
+    font-weight: 300;
+    line-height: 1.55;
+    margin-bottom: 10px;
+}
+
+.amp {
+    display: block;
+    font-size: 50px;
+}
+
+.ornament-wrap {
+    margin: 20px 0;
+}
+
+.ornament-img {
+    max-width: 300px;
+}
+
+.greeting {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    font-size: 22px;
+    color: #3f3f3f;
+}
+
+/* ========================================
+   DATE & PHOTOS
+   ======================================== */
+.sec-date {
+    padding: 40px 20px;
+}
+
+.date-big {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.photos-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.photo-ph { opacity: 0.5; max-width: 430px; }
+.photo-ph--sm { max-width: 300px; }
+.photo-frame-icon { width: 28px; }
+
+/* ========================================
+   PROGRAM
+   ======================================== */
+.sec-program {
+    padding: 40px 20px;
+}
+
+.program-intro {
+    font-size: 22px;
+    color: #3f3f3f;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tl-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.tl-time {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 52px;
+    font-weight: 300;
+    min-width: 120px;
+    text-align: right;
+}
+
+.tl-event {
+    font-size: 22px;
+    color: #3f3f3f;
+    text-align: left;
+    min-width: 200px;
+}
+
+.tl-line {
+    width: 100%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(0.208turn, rgba(230,194,124,0.4) 29%, rgba(167,119,19,0.4) 69%);
+    margin: 0 auto;
+}
+
+/* ========================================
+   DIVIDER
+   ======================================== */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.divider-line {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(0.208turn, rgba(230,194,124,0.5) 29%, rgba(167,119,19,0.5) 69%);
+}
+
+.divider-diamond {
+    width: 10px; height: 10px;
+    background: linear-gradient(0.208turn, rgba(230,194,124,1) 29%, rgba(167,119,19,1) 69%);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+/* ========================================
+   VENUE
+   ======================================== */
+.sec-venue {
+    padding: 40px 20px;
+}
+
+.venue-label {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #3f3f3f;
+    margin-bottom: 10px;
+}
+
+.venue-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.venue-addr {
+    font-size: 22px;
+    color: #3f3f3f;
+    margin-bottom: 30px;
+}
+
+/* ========================================
+   DRESS CODE
+   ======================================== */
+.sec-dresscode {
+    padding: 40px 20px;
+}
+
+.dc-text {
+    font-size: 22px;
+    color: #3f3f3f;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.dc-icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.dc-icon { width: 150px; }
+
+/* ========================================
+   WISHES
+   ======================================== */
+.sec-wishes, .sec-wishes2 {
+    padding: 20px;
+}
+
+.wishes-text {
+    font-size: 22px;
+    color: #3f3f3f;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   COUNTDOWN
+   ======================================== */
+.sec-countdown {
+    padding: 40px 20px;
+}
+
+.countdown {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cd-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.cd-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 96px;
+    font-weight: 300;
+    line-height: 1;
+    background: linear-gradient(0.208turn, rgba(230,194,124,1) 29%, rgba(167,119,19,1) 69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cd-colon {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 96px;
+    font-weight: 300;
+    line-height: 1;
+    background: linear-gradient(0.208turn, rgba(230,194,124,1) 29%, rgba(167,119,19,1) 69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: -5px;
+}
+
+.cd-label {
+    font-size: 22px;
+    color: #3f3f3f;
+    margin-top: 10px;
+}
+
+/* ========================================
+   RSVP FORM
+   ======================================== */
+.sec-rsvp {
+    padding: 40px 20px;
+}
+
+.rsvp-sub {
+    font-size: 22px;
+    color: #3f3f3f;
+    margin-bottom: 15px;
+}
+
+.rsvp-note {
+    font-size: 18px;
+    color: #3f3f3f;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.rsvp-form {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.fg { margin-bottom: 18px; }
+
+.fi {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 17px;
+    color: #020202;
+    border: 2px solid #ac884e;
+    border-radius: 5px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s;
+}
+
+.fi:focus { border-color: #7a5a2a; }
+.fi::placeholder { color: #999; }
+
+/* Radio */
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #020202;
+}
+
+.radio-label input { display: none; }
+
+.radio-mark {
+    width: 20px; height: 20px;
+    border: 2px solid #ac884e;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s;
+}
+
+.radio-label input:checked + .radio-mark::after {
+    content: '';
+    width: 10px; height: 10px;
+    background: #ac884e;
+    border-radius: 50%;
+}
+
+/* Checkbox */
+.check-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #020202;
+}
+
+.check-label input { display: none; }
+
+.check-mark {
+    width: 20px; height: 20px;
+    border: 2px solid #ac884e;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.check-label input:checked + .check-mark {
+    background: #ac884e;
+    border-color: #ac884e;
+}
+
+.check-label input:checked + .check-mark::after {
+    content: '\2713';
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Submit */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    box-shadow: 0px 15px 30px -10px rgba(0,11,48,0.2);
+}
+
+/* ========================================
+   DEADLINE
+   ======================================== */
+.sec-deadline {
+    padding: 20px;
+}
+
+.deadline-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: #3f3f3f;
+}
+
+/* ========================================
+   HOST
+   ======================================== */
+.sec-host {
+    padding: 40px 20px;
+}
+
+.host-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.host-text {
+    font-size: 22px;
+    color: #3f3f3f;
+    max-width: 550px;
+    margin: 0 auto 30px;
+}
+
+.host-btn {
+    padding: 14px 40px;
+    font-size: 18px;
+}
+
+/* ========================================
+   CLOSING
+   ======================================== */
+.sec-closing {
+    padding: 40px 20px;
+}
+
+.closing-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #3f3f3f;
+}
+
+/* ========================================
+   FIXED FOOTER
+   ======================================== */
+#fixedFooter {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+    z-index: 990;
+    padding: 16px 30px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: none;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+#fixedFooter.visible {
+    display: flex;
+}
+
+.ft-btn {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.ft-btn--outline {
+    color: #3f3f3f;
+    border: 2px solid #3f3f3f;
+}
+
+.ft-btn--outline:hover {
+    background: #3f3f3f;
+    color: #fff;
+}
+
+.ft-btn--gold {
+    color: #fff;
+    background: #ac884e;
+    border: 2px solid #ac884e;
+}
+
+.ft-btn--gold:hover {
+    background: #fff1db;
+    border-color: #fff1db;
+    color: #ac884e;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media screen and (max-width: 960px) {
+    .names-title { font-size: 48px; }
+    .greeting { font-size: 30px; }
+    .tl-time { font-size: 42px; }
+    .cd-num, .cd-colon { font-size: 70px; }
+}
+
+@media screen and (max-width: 640px) {
+    .names-title { font-size: 34px; }
+    .greeting { font-size: 24px; }
+    .intro-text { font-size: 18px; }
+    .sec-title { font-size: 28px; }
+    .tl-item { flex-direction: column; gap: 10px; }
+    .tl-time { font-size: 36px; min-width: auto; text-align: center; }
+    .tl-event { min-width: auto; text-align: center; }
+    .cd-num, .cd-colon { font-size: 50px; }
+    .cd-block { min-width: 70px; }
+    .dc-icon { width: 100px; }
+    #fixedHeader { height: 100px; padding: 0 15px; }
+    .music-icon { width: 50px; height: 50px; }
+    .music-label { font-size: 9px; }
+    .overlay-text { font-size: 30px; }
+    .overlay-subtitle { font-size: 18px; }
+}
+
+@media screen and (max-width: 480px) {
+    .names-title { font-size: 28px; }
+    .cd-num, .cd-colon { font-size: 40px; }
+    .cd-label { font-size: 18px; }
+    #fixedHeader { height: 90px; }
+    .ft-btn { font-size: 14px; padding: 10px 20px; }
+}
