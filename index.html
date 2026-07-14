@@ -122,10 +122,27 @@
 
     <!-- === VENUE === -->
     <section class="sec sec-venue">
-        <p class="venue-label">РЕСТОРАН</p>
-        <h2 class="venue-name gold-text">ТЕРЕМ</h2>
-        <p class="venue-addr">г. Александров, КУБА</p>
-        <a href="#" class="outline-btn">Как добраться</a>
+        <p class="venue-label">ГОСТЕВОЙ ДОМ</p>
+        <h2 class="venue-name gold-text">ТЕРЕМ33</h2>
+        <p class="venue-addr">г. Александров</p>
+        <div class="venue-phone-wrap" id="venuePhoneWrap">
+            <a href="#" class="gold-btn venue-btn" id="venueShowBtn">Как добраться</a>
+            <div class="venue-details" id="venueDetails">
+                <div class="venue-row">
+                    <a href="https://www.google.com/maps?q=56.404543,38.757481" target="_blank" class="venue-link">56.404543, 38.757481</a>
+                    <button type="button" class="venue-copy-btn" data-copy="56.404543, 38.757481" title="Скопировать">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    </button>
+                </div>
+                <div class="venue-row">
+                    <a href="https://www.google.com/maps/search/?api=1&query=1-я+Парковая+улица+1+Александров+Владимирская+область" target="_blank" class="venue-link">1-я Парковая улица, 1, СНТ Светлый Пригород, Александровский муниципальный округ, Владимирская область</a>
+                    <button type="button" class="venue-copy-btn" data-copy="1-я Парковая улица, 1, СНТ Светлый Пригород, Александровский муниципальный округ, Владимирская область" title="Скопировать">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    </button>
+                </div>
+                <span class="venue-copy-toast" id="venueCopyToast">Скопировано!</span>
+            </div>
+        </div>
     </section>
 
     <div class="spacer-160"></div>

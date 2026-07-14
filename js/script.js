@@ -265,5 +265,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ========================================
+    // 8. VENUE BUTTON
+    // ========================================
+    var venueShowBtn = document.getElementById('venueShowBtn');
+    var venueDetails = document.getElementById('venueDetails');
+    var venueCopyBtns = document.querySelectorAll('.venue-copy-btn');
+    var venueCopyToast = document.getElementById('venueCopyToast');
+
+    if (venueShowBtn && venueDetails) {
+        venueShowBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            venueShowBtn.style.opacity = '0';
+            venueShowBtn.style.transform = 'scale(0.9)';
+            setTimeout(function() {
+                venueShowBtn.style.display = 'none';
+                venueDetails.classList.add('visible');
+            }, 400);
+        });
+    }
+
+    if (venueCopyBtns) {
+        venueCopyBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var text = btn.getAttribute('data-copy');
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = text;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                if (venueCopyToast) {
+                    venueCopyToast.classList.add('show');
+                    setTimeout(function() { venueCopyToast.classList.remove('show'); }, 2000);
+                }
+            });
+        });
+    }
+
     console.log('Wedding site loaded.');
 });

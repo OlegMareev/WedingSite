@@ -125,7 +125,7 @@ button { cursor: pointer; }
     border: 2px solid #3f3f3f;
     border-radius: 5px;
     letter-spacing: 1px;
-    transition: all 0.3s;
+    transition: all 0.3s, opacity 0.4s, transform 0.4s;
 }
 
 .outline-btn:hover {
@@ -404,6 +404,92 @@ button { cursor: pointer; }
     font-size: 22px;
     color: #3f3f3f;
     margin-bottom: 30px;
+}
+
+.venue-btn {
+    padding: 14px 40px;
+    font-size: 18px;
+}
+
+.venue-phone-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.venue-details {
+    max-width: 600px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease;
+    pointer-events: none;
+}
+
+.venue-details.visible {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+    pointer-events: auto;
+}
+
+.venue-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.venue-link {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3f3f3f;
+    text-decoration: none;
+    border-bottom: 1px dashed #ac884e;
+    transition: color 0.3s;
+    text-align: center;
+}
+
+.venue-link:hover {
+    color: #ac884e;
+}
+
+.venue-copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #ac884e;
+    border-radius: 6px;
+    background: #ac884e;
+    cursor: pointer;
+    color: #fff;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.venue-copy-btn:hover {
+    background: #8a6a30;
+    border-color: #8a6a30;
+}
+
+.venue-copy-toast {
+    display: block;
+    font-size: 14px;
+    color: #ac884e;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.venue-copy-toast.show {
+    opacity: 1;
 }
 
 /* ========================================
