@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var overlay = document.getElementById('invitationOverlay');
     var openBtn = document.getElementById('openBtn');
     var mainContent = document.getElementById('mainContent');
-    var fixedFooter = document.getElementById('fixedFooter');
     var bgVideo = document.getElementById('bgVideo');
 
     // Pause video initially
@@ -31,11 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show main content
         if (mainContent) {
             mainContent.classList.add('visible');
-        }
-
-        // Show footer
-        if (fixedFooter) {
-            fixedFooter.classList.add('visible');
         }
 
         // Start video
@@ -78,7 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.play().then(function() {
             if (playBtn) playBtn.style.display = 'none';
             if (stopBtn) stopBtn.style.display = 'inline-block';
-            if (musicLabel) musicLabel.classList.add('hidden');
+            if (musicLabel) {
+                musicLabel.innerHTML = 'Выключить<br>музыку';
+            }
         }).catch(function() {});
     }
 
@@ -88,7 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.currentTime = 0;
         if (playBtn) playBtn.style.display = 'inline-block';
         if (stopBtn) stopBtn.style.display = 'none';
-        if (musicLabel) musicLabel.classList.remove('hidden');
+        if (musicLabel) {
+            musicLabel.innerHTML = 'Включить<br>музыку';
+        }
     }
 
     if (playBtn) {
@@ -108,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // 3. COUNTDOWN TIMER
     // ========================================
-    var deadline = new Date('2026-09-10T18:00:00+03:00');
+    var deadline = new Date('2026-10-10T11:00:00+03:00');
 
     function pad(n) {
         return String(n).padStart(2, '0');

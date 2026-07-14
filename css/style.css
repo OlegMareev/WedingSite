@@ -224,7 +224,7 @@ button { cursor: pointer; }
 
 .names-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 62px;
+    font-size: 72px;
     font-weight: 300;
     line-height: 1.55;
     margin-bottom: 10px;
@@ -267,7 +267,7 @@ button { cursor: pointer; }
 
 .date-big {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 300;
     letter-spacing: 3px;
     margin-bottom: 30px;
@@ -673,69 +673,27 @@ button { cursor: pointer; }
 
 .closing-text {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #3f3f3f;
+    margin-bottom: 20px;
 }
 
-/* ========================================
-   FIXED FOOTER
-   ======================================== */
-#fixedFooter {
-    position: fixed;
-    bottom: 0; left: 0;
-    width: 100%;
-    z-index: 990;
-    padding: 16px 30px;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    display: none;
-    justify-content: flex-end;
-    gap: 15px;
-}
-
-#fixedFooter.visible {
-    display: flex;
-}
-
-.ft-btn {
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-.ft-btn--outline {
-    color: #3f3f3f;
-    border: 2px solid #3f3f3f;
-}
-
-.ft-btn--outline:hover {
-    background: #3f3f3f;
-    color: #fff;
-}
-
-.ft-btn--gold {
-    color: #fff;
-    background: #ac884e;
-    border: 2px solid #ac884e;
-}
-
-.ft-btn--gold:hover {
-    background: #fff1db;
-    border-color: #fff1db;
-    color: #ac884e;
+.closing-sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.6;
+    letter-spacing: 1px;
 }
 
 /* ========================================
    RESPONSIVE
    ======================================== */
 @media screen and (max-width: 960px) {
-    .names-title { font-size: 48px; }
+    .names-title { font-size: 56px; }
     .greeting { font-size: 30px; }
     .tl-time { font-size: 42px; }
     .cd-num, .cd-colon { font-size: 70px; }
@@ -764,5 +722,4 @@ button { cursor: pointer; }
     .cd-num, .cd-colon { font-size: 40px; }
     .cd-label { font-size: 18px; }
     #fixedHeader { height: 90px; }
-    .ft-btn { font-size: 14px; padding: 10px 20px; }
 }
