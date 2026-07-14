@@ -12,6 +12,7 @@ html { scroll-behavior: smooth; }
 body {
     font-family: Arial, sans-serif;
     color: #3f3f3f;
+    font-weight: 600;
     line-height: 1.55;
     overflow-x: hidden;
     background: #fff;
@@ -195,7 +196,7 @@ button { cursor: pointer; }
 .sec-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 30px;
@@ -225,7 +226,7 @@ button { cursor: pointer; }
 .names-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 72px;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1.55;
     margin-bottom: 10px;
 }
@@ -246,7 +247,7 @@ button { cursor: pointer; }
 .greeting {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 38px;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 30px;
@@ -268,7 +269,7 @@ button { cursor: pointer; }
 .date-big {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 50px;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 3px;
     margin-bottom: 30px;
 }
@@ -332,7 +333,7 @@ button { cursor: pointer; }
 .tl-time {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 52px;
-    font-weight: 300;
+    font-weight: 600;
     min-width: 120px;
     text-align: right;
 }
@@ -394,7 +395,7 @@ button { cursor: pointer; }
 .venue-name {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 3px;
     margin-bottom: 15px;
 }
@@ -467,7 +468,7 @@ button { cursor: pointer; }
 .cd-num {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 96px;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1;
     background: linear-gradient(0.208turn, rgba(230,194,124,1) 29%, rgba(167,119,19,1) 69%);
     -webkit-background-clip: text;
@@ -478,7 +479,7 @@ button { cursor: pointer; }
 .cd-colon {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 96px;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1;
     background: linear-gradient(0.208turn, rgba(230,194,124,1) 29%, rgba(167,119,19,1) 69%);
     -webkit-background-clip: text;
@@ -648,7 +649,7 @@ button { cursor: pointer; }
 .host-name {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
@@ -695,7 +696,7 @@ button { cursor: pointer; }
 .host-phone-link {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 32px;
-    font-weight: 300;
+    font-weight: 600;
     color: #3f3f3f;
     text-decoration: none;
     letter-spacing: 1px;
