@@ -225,5 +225,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ========================================
+    // 7. HOST PHONE BUTTON
+    // ========================================
+    var hostShowBtn = document.getElementById('hostShowBtn');
+    var hostPhoneRow = document.getElementById('hostPhoneRow');
+    var hostCopyBtn = document.getElementById('hostCopyBtn');
+    var hostCopyToast = document.getElementById('hostCopyToast');
+
+    if (hostShowBtn && hostPhoneRow) {
+        hostShowBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            hostShowBtn.style.opacity = '0';
+            hostShowBtn.style.transform = 'scale(0.9)';
+            setTimeout(function() {
+                hostShowBtn.style.display = 'none';
+                hostPhoneRow.classList.add('visible');
+            }, 400);
+        });
+    }
+
+    if (hostCopyBtn) {
+        hostCopyBtn.addEventListener('click', function() {
+            var phone = '+7 (800) 555 35-35';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(phone);
+            } else {
+                var ta = document.createElement('textarea');
+                ta.value = phone;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            }
+            if (hostCopyToast) {
+                hostCopyToast.classList.add('show');
+                setTimeout(function() { hostCopyToast.classList.remove('show'); }, 2000);
+            }
+        });
+    }
+
     console.log('Wedding site loaded.');
 });
