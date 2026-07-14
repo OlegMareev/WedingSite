@@ -274,6 +274,7 @@ button { cursor: pointer; }
 }
 
 .photos-row {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,9 +282,25 @@ button { cursor: pointer; }
     flex-wrap: wrap;
 }
 
-.photo-ph { opacity: 0.5; max-width: 430px; }
-.photo-ph--sm { max-width: 300px; }
-.photo-frame-icon { width: 28px; }
+.photo-ph { opacity: 0.5; width: 430px; }
+.photo-ph--sm { width: 300px; }
+.photo-stack {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+}
+.photo-stack img:first-child {
+    display: block;
+    width: 100%;
+}
+.frame-overlay {
+    position: absolute;
+    top: 43.5%;
+    left: 19%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: auto;
+}
 
 /* ========================================
    PROGRAM
