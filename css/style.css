@@ -384,6 +384,14 @@ button { cursor: pointer; }
     padding: 40px 20px;
 }
 
+.venue-img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
 .venue-label {
     font-size: 14px;
     letter-spacing: 3px;
@@ -730,6 +738,14 @@ button { cursor: pointer; }
    ======================================== */
 .sec-host {
     padding: 40px 20px;
+}
+
+.host-img {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
 }
 
 .host-name {
