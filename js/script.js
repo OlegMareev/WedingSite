@@ -161,18 +161,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========================================
-    // 5. FORM SUBMIT
+    // 5. FORM SUBMIT → Google Apps Script
     // ========================================
+    // ⚠️ ЗАМЕНИТЕ ЭТУ ССЫЛКУ на URL вашего Apps Script после деплоя
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpD9RKkLR4e24HcGPEefvLZCp0rci_VKA7o2CjJ5G7junW6eio8w4qxqD_MR3ZMxzM5g/exec';
+
     var form = document.getElementById('rsvpForm');
+    var submitBtn = form ? form.querySelector('.submit-btn') : null;
+
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Собираем данные
             var fd = new FormData(form);
             var data = {};
             fd.forEach(function(v, k) { data[k] = v; });
-            console.log('Form data:', data);
-            alert('Спасибо! Ваша заявка отправлена.');
-            form.reset();
+
+            // Блокируем кнопку
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'ОТПРАВКА...';
+            }
+
+            // Отправляем в Google Apps Script
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(data)
+            })
+            .then(function(resp) { return resp.json(); })
+            .then(function(res) {
+                if (res.success) {
+                    alert('Спасибо! Ваша анкета отправлена. Мы ждём вас на нашем празднике!');
+                    form.reset();
+                } else {
+                    alert('Ошибка: ' + (res.message || 'Попробуйте ещё раз'));
+                }
+            })
+            .catch(function(err) {
+                console.error('Ошибка отправки:', err);
+                alert('Произошла ошибка при отправке. Попробуйте ещё раз или свяжитесь с нами напрямую.');
+            })
+            .finally(function() {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'ОТПРАВИТЬ';
+                }
+            });
         });
     }
 

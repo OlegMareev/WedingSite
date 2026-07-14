@@ -192,27 +192,73 @@
 
         <form class="rsvp-form" id="rsvpForm">
             <div class="fg">
-                <input type="text" name="name" placeholder="Имя" required class="fi">
+                <label class="fi-label">Ваше имя</label>
+                <input type="text" name="Имя" placeholder="Имя" required class="fi">
             </div>
             <div class="fg">
-                <input type="tel" name="phone" placeholder="Телефон" required class="fi" id="phoneInput">
+                <label class="fi-label">Телефон</label>
+                <input type="tel" name="Телефон" placeholder="Телефон" required class="fi" id="phoneInput">
             </div>
             <div class="fg">
+                <label class="fi-label">Вы придёте на торжество?</label>
                 <label class="radio-label">
-                    <input type="radio" name="contact" value="Telegram" checked>
+                    <input type="radio" name="Участие" value="С радостью приду!" checked>
+                    <span class="radio-mark"></span>
+                    <span>С радостью приду!</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="Участие" value="К сожалению, не смогу">
+                    <span class="radio-mark"></span>
+                    <span>К сожалению, не смогу</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="Участие" value="Пока не уверен(а)">
+                    <span class="radio-mark"></span>
+                    <span>Пока не уверен(а)</span>
+                </label>
+            </div>
+            <div class="fg">
+                <label class="fi-label">Сколько вас будет?</label>
+                <input type="number" name="Кол-во гостей" placeholder="Количество гостей" min="1" max="10" class="fi">
+            </div>
+            <div class="fg">
+                <label class="fi-label">Способ связи</label>
+                <label class="radio-label">
+                    <input type="radio" name="Способ связи" value="Telegram" checked>
                     <span class="radio-mark"></span>
                     <span>Напишите мне в Telegram</span>
                 </label>
                 <label class="radio-label">
-                    <input type="radio" name="contact" value="Max">
+                    <input type="radio" name="Способ связи" value="Max">
                     <span class="radio-mark"></span>
                     <span>Напишите мне в Max</span>
                 </label>
                 <label class="radio-label">
-                    <input type="radio" name="contact" value="Звонок">
+                    <input type="radio" name="Способ связи" value="Звонок">
                     <span class="radio-mark"></span>
                     <span>Перезвоните мне</span>
                 </label>
+            </div>
+            <div class="fg">
+                <label class="fi-label">Есть ли аллергии или предпочтения в еде?</label>
+                <input type="text" name="Аллергии" placeholder="Например: вегетарианец, без глютена..." class="fi">
+            </div>
+            <div class="fg">
+                <label class="fi-label">Будут ли с вами дети?</label>
+                <label class="radio-label">
+                    <input type="radio" name="Дети" value="Да" checked>
+                    <span class="radio-mark"></span>
+                    <span>Да</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="Дети" value="Нет">
+                    <span class="radio-mark"></span>
+                    <span>Нет</span>
+                </label>
+            </div>
+            <div class="fg">
+                <label class="fi-label">Ваши пожелания молодожёнам</label>
+                <textarea name="Пожелания" placeholder="Напишите ваши тёплые слова..." class="fi fi-textarea" rows="4"></textarea>
             </div>
             <div class="fg">
                 <label class="check-label">
