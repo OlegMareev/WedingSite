@@ -180,6 +180,7 @@ button { cursor: pointer; }
     line-height: 1.25;
     pointer-events: all;
     transition: opacity 0.5s;
+    opacity: 1;
 }
 
 .music-label.hidden { opacity: 0; }
@@ -914,7 +915,7 @@ button { cursor: pointer; }
     #fixedHeader { height: 100px; padding: 0 15px; }
     .music-icon { width: 50px; height: 50px; }
     .music-label { font-size: 9px; }
-    .overlay-text { font-size: 30px; }
+    .overlay-text { font-size: 36px; }
     .overlay-subtitle { font-size: 18px; }
 }
 

@@ -107,6 +107,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========================================
+    // SHOW/HIDE MUSIC LABEL ON SCROLL
+    // ========================================
+    if (musicLabel) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY < 100) {
+                musicLabel.classList.remove('hidden');
+            } else {
+                musicLabel.classList.add('hidden');
+            }
+        });
+    }
+
+    // ========================================
     // 3. COUNTDOWN TIMER
     // ========================================
     var deadline = new Date('2026-10-10T11:00:00+03:00');
