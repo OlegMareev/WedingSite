@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (bgVideo) {
         bgVideo.pause();
         bgVideo.currentTime = 0;
+        bgVideo.playbackRate = 0.7;
     }
 
     function openSite() {
@@ -35,10 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start video
         if (bgVideo) {
             bgVideo.load();
+            bgVideo.playbackRate = 0.7;
             bgVideo.play().catch(function(e) {
                 console.log('Video autoplay blocked, retrying muted');
                 bgVideo.muted = true;
                 bgVideo.playsInline = true;
+                bgVideo.playbackRate = 0.7;
                 bgVideo.play().catch(function() {});
             });
         }
