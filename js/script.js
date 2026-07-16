@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 5. FORM SUBMIT → Google Apps Script
     // ========================================
     // ⚠️ ЗАМЕНИТЕ ЭТУ ССЫЛКУ на URL вашего Apps Script после деплоя
-    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpD9RKkLR4e24HcGPEefvLZCp0rci_VKA7o2CjJ5G7junW6eio8w4qxqD_MR3ZMxzM5g/exec';
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwpsMf-dfALEJfcd_LNnCZNmXh6MiDNBrnLgWuFmsJCfqdcgRiqOWODeOD1-H7a3wg/exec';
 
     var form = document.getElementById('rsvpForm');
     var submitBtn = form ? form.querySelector('.submit-btn') : null;
