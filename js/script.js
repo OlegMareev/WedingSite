@@ -190,7 +190,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Собираем данные
             var fd = new FormData(form);
             var data = {};
-            fd.forEach(function(v, k) { data[k] = v; });
+            var checkboxFields = ['Алкоголь', 'Еда'];
+            checkboxFields.forEach(function(k) {
+                var vals = fd.getAll(k);
+                data[k] = vals.length ? vals.join(', ') : '';
+            });
+            fd.forEach(function(v, k) {
+                if (checkboxFields.indexOf(k) === -1) data[k] = v;
+            });
 
             // Блокируем кнопку
             if (submitBtn) {

@@ -20,28 +20,24 @@ function doPost(e) {
       sheet.appendRow([
         'Дата заполнения',
         'Имя',
-        'Телефон',
         'Участие',
-        'Кол-во гостей',
-        'Способ связи',
+        'Алкоголь',
+        'Еда',
         'Аллергии',
-        'Дети',
-        'Пожелания'
+        'Комментарий'
       ]);
       // Форматируем заголовки
-      var headerRange = sheet.getRange(1, 1, 1, 9);
+      var headerRange = sheet.getRange(1, 1, 1, 7);
       headerRange.setFontWeight('bold');
       headerRange.setBackground('#ac884e');
       headerRange.setFontColor('#ffffff');
       sheet.setColumnWidth(1, 160);
-      sheet.setColumnWidth(2, 180);
-      sheet.setColumnWidth(3, 160);
-      sheet.setColumnWidth(4, 200);
-      sheet.setColumnWidth(5, 120);
-      sheet.setColumnWidth(6, 160);
-      sheet.setColumnWidth(7, 250);
-      sheet.setColumnWidth(8, 80);
-      sheet.setColumnWidth(9, 350);
+      sheet.setColumnWidth(2, 250);
+      sheet.setColumnWidth(3, 200);
+      sheet.setColumnWidth(4, 250);
+      sheet.setColumnWidth(5, 200);
+      sheet.setColumnWidth(6, 250);
+      sheet.setColumnWidth(7, 350);
     }
     
     // Записываем данные
@@ -51,13 +47,11 @@ function doPost(e) {
     sheet.appendRow([
       timestamp,
       data['Имя'] || '',
-      data['Телефон'] || '',
       data['Участие'] || '',
-      data['Кол-во гостей'] || '',
-      data['Способ связи'] || '',
+      data['Алкоголь'] || '',
+      data['Еда'] || '',
       data['Аллергии'] || '',
-      data['Дети'] || '',
-      data['Пожелания'] || ''
+      data['Комментарий'] || ''
     ]);
     
     return ContentService

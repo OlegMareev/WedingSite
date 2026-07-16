@@ -223,11 +223,7 @@
         <form class="rsvp-form" id="rsvpForm">
             <div class="fg">
                 <label class="fi-label">Ваше имя</label>
-                <input type="text" name="Имя" placeholder="Имя" required class="fi">
-            </div>
-            <div class="fg">
-                <label class="fi-label">Телефон</label>
-                <input type="tel" name="Телефон" placeholder="Телефон" required class="fi" id="phoneInput">
+                <input type="text" name="Имя" placeholder="Например: Софья" required class="fi">
             </div>
             <div class="fg">
                 <label class="fi-label">Вы придёте на торжество?</label>
@@ -248,47 +244,68 @@
                 </label>
             </div>
             <div class="fg">
-                <label class="fi-label">Сколько вас будет?</label>
-                <input type="number" name="Кол-во гостей" placeholder="Количество гостей" min="1" max="10" class="fi">
+                <label class="fi-label">Какой алкоголь предпочитаете?</label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Алкоголь" value="Шампанское">
+                    <span class="checkbox-mark"></span>
+                    <span>Шампанское</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Алкоголь" value="Красное вино">
+                    <span class="checkbox-mark"></span>
+                    <span>Красное вино</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Алкоголь" value="Белое вино">
+                    <span class="checkbox-mark"></span>
+                    <span>Белое вино</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Алкоголь" value="Коньяк">
+                    <span class="checkbox-mark"></span>
+                    <span>Коньяк</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Алкоголь" value="Виски">
+                    <span class="checkbox-mark"></span>
+                    <span>Виски</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Алкоголь" value="Водка">
+                    <span class="checkbox-mark"></span>
+                    <span>Водка</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Алкоголь" value="Не пью алкоголь">
+                    <span class="checkbox-mark"></span>
+                    <span>Не пью алкоголь</span>
+                </label>
             </div>
             <div class="fg">
-                <label class="fi-label">Способ связи</label>
-                <label class="radio-label">
-                    <input type="radio" name="Способ связи" value="Telegram" checked>
-                    <span class="radio-mark"></span>
-                    <span>Напишите мне в Telegram</span>
+                <label class="fi-label">Что предпочитаете из еды?</label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Еда" value="Мясо">
+                    <span class="checkbox-mark"></span>
+                    <span>Мясо</span>
                 </label>
-                <label class="radio-label">
-                    <input type="radio" name="Способ связи" value="Max">
-                    <span class="radio-mark"></span>
-                    <span>Напишите мне в Max</span>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Еда" value="Рыба">
+                    <span class="checkbox-mark"></span>
+                    <span>Рыба</span>
                 </label>
-                <label class="radio-label">
-                    <input type="radio" name="Способ связи" value="Звонок">
-                    <span class="radio-mark"></span>
-                    <span>Перезвоните мне</span>
-                </label>
-            </div>
-            <div class="fg">
-                <label class="fi-label">Есть ли аллергии или предпочтения в еде?</label>
-                <input type="text" name="Аллергии" placeholder="Например: вегетарианец, без глютена..." class="fi">
-            </div>
-            <div class="fg">
-                <label class="fi-label">Будут ли с вами дети?</label>
-                <label class="radio-label">
-                    <input type="radio" name="Дети" value="Да" checked>
-                    <span class="radio-mark"></span>
-                    <span>Да</span>
-                </label>
-                <label class="radio-label">
-                    <input type="radio" name="Дети" value="Нет">
-                    <span class="radio-mark"></span>
-                    <span>Нет</span>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Еда" value="Птица">
+                    <span class="checkbox-mark"></span>
+                    <span>Птица</span>
                 </label>
             </div>
             <div class="fg">
-                <label class="fi-label">Ваши пожелания молодожёнам</label>
-                <textarea name="Пожелания" placeholder="Напишите ваши тёплые слова..." class="fi fi-textarea" rows="4"></textarea>
+                <label class="fi-label">Есть ли аллергии?</label>
+                <input type="text" name="Аллергии" placeholder="Укажите, если есть..." class="fi">
+            </div>
+            <div class="fg">
+                <label class="fi-label">Есть комментарий?</label>
+                <textarea name="Комментарий" placeholder="Любые вопросы, пожелания или комментарии..." class="fi fi-textarea" rows="4"></textarea>
             </div>
             <button type="submit" class="gold-btn submit-btn">ОТПРАВИТЬ</button>
         </form>

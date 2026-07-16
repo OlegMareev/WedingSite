@@ -703,6 +703,42 @@ button { cursor: pointer; }
     border-radius: 50%;
 }
 
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #020202;
+}
+
+.checkbox-label input { display: none; }
+
+.checkbox-mark {
+    width: 20px; height: 20px;
+    border: 2px solid #ac884e;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.checkbox-label input:checked + .checkbox-mark {
+    background: #ac884e;
+}
+
+.checkbox-label input:checked + .checkbox-mark::after {
+    content: '';
+    width: 6px; height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+}
+
 /* Submit */
 .submit-btn {
     width: 100%;
