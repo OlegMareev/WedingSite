@@ -536,7 +536,7 @@ button { cursor: pointer; }
     gap: 15px;
 }
 
-.dc-icon { width: 150px; height: 100px; object-fit: contain; }
+.dc-icon { width: 240px; height: auto; object-fit: contain; object-position: center; }
 
 .dc-photo {
     max-width: 620px;
@@ -954,7 +954,7 @@ button { cursor: pointer; }
     .tl-event { min-width: auto; text-align: center; }
     .cd-num, .cd-colon { font-size: 50px; }
     .cd-block { min-width: 70px; }
-    .dc-icon { width: 100px; }
+    .dc-icon { width: 200px; }
     #fixedHeader { height: 100px; padding: 0 15px; }
     .music-icon { width: 50px; height: 50px; }
     .music-label { font-size: 9px; }
@@ -972,6 +972,7 @@ button { cursor: pointer; }
     .closing-text { font-size: 28px; }
     .cd-num, .cd-colon { font-size: 40px; }
     .cd-label { font-size: 18px; }
+    .dc-icon { width: 160px; }
     #fixedHeader { height: 90px; }
 }
 
