@@ -27,11 +27,9 @@ button { cursor: pointer; }
    ======================================== */
 .gold-text {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    background: linear-gradient(0.208turn, #e2c06a 29%, #b8840f 69%);
-    -webkit-background-clip: text;
+    background: linear-gradient(0.208turn, rgba(230,194,124,1) 29%, rgba(167,119,19,1) 69%);    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 1px rgba(180, 140, 50, 0.4));
 }
 
 /* ========================================
