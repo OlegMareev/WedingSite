@@ -292,7 +292,7 @@ button { cursor: pointer; }
     flex-wrap: wrap;
 }
 
-.photo-ph { opacity: 0.5; width: 430px; }
+.photo-ph { width: 430px; }
 .photo-ph--sm { width: 300px; }
 .photo-stack {
     position: relative;
@@ -305,10 +305,10 @@ button { cursor: pointer; }
 }
 .frame-overlay {
     position: absolute;
-    top: 43.5%;
-    left: 19%;
+    top: 30%;
+    left: 79%;
     transform: translateX(-50%);
-    width: 30px;
+    width: 38px;
     height: auto;
 }
 
