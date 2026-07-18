@@ -523,11 +523,10 @@ button { cursor: pointer; }
 
 .dc-icons {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 60px;
     margin-top: 40px;
-    flex-wrap: wrap;
-    align-items: flex-start;
 }
 
 .dc-group {
@@ -540,9 +539,9 @@ button { cursor: pointer; }
 .dc-icon { width: 150px; height: 100px; object-fit: contain; }
 
 .dc-photo {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+    max-width: 620px;
+    width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
