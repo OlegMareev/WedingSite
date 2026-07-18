@@ -260,7 +260,6 @@ button { cursor: pointer; }
     font-size: 38px;
     font-weight: 600;
     letter-spacing: 3px;
-    text-transform: uppercase;
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -942,11 +941,15 @@ button { cursor: pointer; }
 }
 
 @media screen and (max-width: 640px) {
-    .names-title { font-size: 42px; }
-    .amp { font-size: 30px; }
+    .names-title { font-size: 50px; }
+    .amp { font-size: 36px; }
     .greeting { font-size: 24px; }
     .intro-text { font-size: 18px; }
-    .sec-title { font-size: 28px; }
+    .sec-title { font-size: 38px; }
+    .date-big { font-size: 48px; }
+    .venue-name { font-size: 40px; }
+    .host-name { font-size: 40px; }
+    .closing-text { font-size: 30px; }
     .tl-item { flex-direction: column; gap: 10px; }
     .tl-time { font-size: 36px; min-width: auto; text-align: center; }
     .tl-event { min-width: auto; text-align: center; }
@@ -961,9 +964,20 @@ button { cursor: pointer; }
 }
 
 @media screen and (max-width: 480px) {
-    .names-title { font-size: 36px; }
-    .amp { font-size: 24px; }
+    .names-title { font-size: 44px; }
+    .amp { font-size: 30px; }
+    .sec-title { font-size: 36px; }
+    .date-big { font-size: 46px; }
+    .venue-name { font-size: 38px; }
+    .host-name { font-size: 38px; }
+    .closing-text { font-size: 28px; }
     .cd-num, .cd-colon { font-size: 40px; }
     .cd-label { font-size: 18px; }
     #fixedHeader { height: 90px; }
+}
+
+@media screen and (max-width: 300px) {
+    .sec-program .sec-title { font-size: 30px; }
+    .sec-wishes .sec-title { font-size: 30px; }
+    .sec-countdown .sec-title { font-size: 30x; }
 }
