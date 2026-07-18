@@ -175,7 +175,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========================================
-    // 5. FORM SUBMIT → Google Apps Script
+    // 5. FORM — show/hide food fields based on attendance
+    // ========================================
+    var form = document.getElementById('rsvpForm');
+    var partyFields = form ? form.querySelectorAll('.fg-party') : null;
+    var attendanceRadios = form ? form.querySelectorAll('input[name="Участие"]') : null;
+
+    function togglePartyFields() {
+        if (!attendanceRadios || !partyFields) return;
+        var selected = '';
+        attendanceRadios.forEach(function(r) { if (r.checked) selected = r.value; });
+        var hide = selected === 'К сожалению, не смогу';
+        partyFields.forEach(function(el) {
+            if (hide) { el.classList.add('hidden'); } else { el.classList.remove('hidden'); }
+        });
+    }
+
+    if (attendanceRadios) {
+        attendanceRadios.forEach(function(r) { r.addEventListener('change', togglePartyFields); });
+        togglePartyFields();
+    }
+
+    // ========================================
+    // 6. FORM SUBMIT → Google Apps Script
     // ========================================
     // ⚠️ ЗАМЕНИТЕ ЭТУ ССЫЛКУ на URL вашего Apps Script после деплоя
     var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwpsMf-dfALEJfcd_LNnCZNmXh6MiDNBrnLgWuFmsJCfqdcgRiqOWODeOD1-H7a3wg/exec';
@@ -216,6 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (res.success) {
                     alert('Спасибо! Ваша анкета отправлена. Мы ждём вас на нашем празднике!');
                     form.reset();
+                    togglePartyFields();
                 } else {
                     alert('Ошибка: ' + (res.message || 'Попробуйте ещё раз'));
                 }

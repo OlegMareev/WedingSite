@@ -922,6 +922,10 @@ button { cursor: pointer; }
     cursor: pointer;
 }
 
+.fg-party.hidden {
+    display: none;
+}
+
 .gallery-img:hover {
     transform: scale(1.03);
 }
